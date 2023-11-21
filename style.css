@@ -1,59 +1,361 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(photos/Birdview.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header img{
+    max-width: 25rem;
+    height: auto;
+    margin-top: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+/* ---------Nav Bar Style----------- */
+nav{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;  
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+}
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;  
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-inline: 10px;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+/* Styling my text box*/
+
 /* to hide the actual checkbox from the screen */
 .menu input {
     position: absolute;
     left: -9999px;
 }
 /* the label provides the same functionality 
-since the 'for' attribute in the html is equal to 'id'
-*/
+since the 'for' attribute in the html is equal to 'id' */
+
 .menu label {
     position: absolute;
-    top: 20px;
-    left:10px;
+    top: 40px;
+    right:20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    z-index: 999;
+    transform: scale(0);
 }
 
 .menu label div{
     width: 30px;
     height: 5px;
     border-radius: 9999px;
-    background-color: #2f2f2f;
+    background-color: white;
 }
 
-/* Thus code toggles the side-menu */
-.menu .side_menu {
-    transform: translateX(-100%);
-    transition: transform 300ms ease;
+.menu input:checked ~ .nav-links {
+    opacity: 1;
 }
 
-.menu input:checked ~ .side_menu {
-    transform: translateX(0%);
+.text-box{
+    width: 90%;
+    color: #fff;
+    position:absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
 }
-/* ** */
 
-.side_menu {
-    margin-top: 80px
+.text-box h1{
+    font-size:  62px;
 }
 
-.side_menu ul {
+.text-box p{
+    margin: 10px 0 20px;
+    font-size: 16px;
+    color:#fff;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    border-radius: 0.25rem;
+    position: relative;
+    cursor: pointer; 
+    transition: 500ms ease;
+}
+
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+}
+/*Navbar for mobile or smaller devices*/
+nav .fa{
+    display: none;
+}
+/* Designing the course section */
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: #777;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 5%;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style:none;
-    background: #f5f5f5;
-    min-width: 100px;
-    width: fit-content;
-    padding: 10px 20px;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
 }
 
-.side_menu ul li a {
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*Styling Testimonials */
+.testimonials{
+    width:80%;
+    margin:auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.testimonials-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+    
+}
+
+.testimonials-col img{
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+
+}
+.testimonials-col p{
+   padding: 0; 
+}
+
+.testimonials-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Styling Contact Us */
+.contact{
+    padding: 100px 0;
+    text-align: center;
+    margin: 100px auto;
+    width:  80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(photos/Students.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.contact h1{
+    color:#fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.contact button {
+    background: transparent;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 16px;
+    border: none;
+    background-color: #127fb9;
+    color: whitesmoke;
+    box-shadow: 0px 0px 2px 2px #127fb9;
+}
+
+.contact button a {
     color: inherit;
     text-decoration: none;
+}
+/*styling footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #127fb9;
+    padding: 2rem 6rem;
+}
+
+.Footer {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.Footer div h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.Footer div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Footer div ul {
+    list-style: none;
+}
+
+.Footer div ul li {
+    color: #e6e2e2;
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+
+    .menu label {
+        transform: scale(1);
+    }
+
+    .nav-links ul li{
+        display:block;
+        border-bottom: 1px solid #bcbbbba5;
+    }
+
+    .nav-links {
+        position:absolute;
+        background: #000;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: right;
+        z-index: 2;
+        transition: 300ms ease;
+        opacity: 0;
+    }
+
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 1px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 0 10px;
+        padding-top: 80px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .contact h1{
+        font-size: 24px;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+
+    .Footer {
+        width: 100%;
+    }
 }
