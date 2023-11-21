@@ -1,0 +1,59 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* to hide the actual checkbox from the screen */
+.menu input {
+    position: absolute;
+    left: -9999px;
+}
+/* the label provides the same functionality 
+since the 'for' attribute in the html is equal to 'id'
+*/
+.menu label {
+    position: absolute;
+    top: 20px;
+    left:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu label div{
+    width: 30px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: #2f2f2f;
+}
+
+/* Thus code toggles the side-menu */
+.menu .side_menu {
+    transform: translateX(-100%);
+    transition: transform 300ms ease;
+}
+
+.menu input:checked ~ .side_menu {
+    transform: translateX(0%);
+}
+/* ** */
+
+.side_menu {
+    margin-top: 80px
+}
+
+.side_menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style:none;
+    background: #f5f5f5;
+    min-width: 100px;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.side_menu ul li a {
+    color: inherit;
+    text-decoration: none;
+}
