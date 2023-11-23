@@ -1,0 +1,383 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(photos/Birdview.jpg);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: 60vh;
+}
+
+nav{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+}
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+    position: relative;
+    z-index: 10;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-inline: 10px;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+/* Styling my text box*/
+
+/* to hide the actual checkbox from the screen */
+.menu input {
+    position: absolute;
+    left: -9999px;
+}
+/* the label provides the same functionality 
+since the 'for' attribute in the html is equal to 'id' */
+
+.menu label {
+    position: absolute;
+    top: 40px;
+    right:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 999;
+    transform: scale(0);
+}
+
+.menu label div{
+    width: 30px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: white;
+}
+
+.menu input:checked ~ .nav-links {
+    opacity: 1;
+}
+
+.undergrad {
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 45px;
+}
+
+.animate {
+    animation: popIn 1s 1;
+    animation-delay: var(--i * 1s);
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}   
+
+.main {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.main .container h1 {
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.cs-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cs-courses .lv .semesters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lv {
+    position: relative;
+    margin-top: 20px;
+}
+
+.lv h3 {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #424069;
+    font-weight: 300;
+}
+
+.cs-courses .lv .semesters div ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lv ul li {
+    color: #787878;
+    display: flex;
+    gap: 15px;
+}
+
+.semesters {
+    height: 600px;
+    padding: 0 0.5rem;
+}
+
+input[type = checkbox] {
+    display: none;
+}
+
+.lv label {
+    font-size: 18px;
+    background-color: #127fb9;
+    color: white;
+    font-weight: 400;
+    padding: 1rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* label {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    display: block;
+} */
+
+#check:checked ~ .sem1 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check2:checked ~ .sem2 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check3:checked ~ .sem3 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check4:checked ~ .sem4 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check5:checked ~ .itsem1 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check6:checked ~ .itsem2 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check7:checked ~ .itsem3 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+#check8:checked ~ .itsem4 {
+    height: 0;
+    overflow: hidden;
+    transition: height 350ms ease;
+}
+
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #127fb9;
+    padding: 2rem 6rem;
+}
+
+.Footer {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.Footer div h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.Footer div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Footer div ul {
+    list-style: none;
+}
+
+.Footer div ul li {
+    color: #e6e2e2;
+}
+
+@media (max-width: 920px) {
+    .undergrad {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 800px) {
+    .lv {
+        width: 330px;
+    }
+
+    .cs-courses {
+        gap: 30px;
+    }
+
+    .semesters {
+        height: 650px;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+
+    .Footer {
+        width: 100%;
+    }
+}
+
+
+@media(max-width: 700px){
+    .undergrad {
+        font-size: 25px;
+        padding: 0 0.5rem;
+    }
+    
+    .menu label {
+        transform: scale(1);
+    }
+
+    .nav-links ul li{
+        display:block;
+        border-bottom: 1px solid #bcbbbba5;
+    }
+
+    .nav-links {
+        position:absolute;
+        background: #000;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: right;
+        z-index: 2;
+        transition: 300ms ease;
+        opacity: 0;
+    }
+
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 1px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 0 10px;
+        padding-top: 80px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .contact h1{
+        font-size: 24px;
+    }
+
+    .lv {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .undergrad {
+        font-size: 18px;
+    }
+}
