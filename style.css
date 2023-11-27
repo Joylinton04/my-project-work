@@ -1,0 +1,840 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(photos/Birdview.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header img{
+    max-width: 25rem;
+    height: auto;
+    margin-top: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+/* ---------Nav Bar Style----------- */
+nav{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;  
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+}
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;  
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-inline: 10px;
+    padding: 4px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links ul li:hover {
+    transform: scale(1.2);
+}
+
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #29ABFF;
+    width: 0%;
+    height: 2px;
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
+/* Styling my text box*/
+
+/* to hide the actual checkbox from the screen */
+.menu input {
+    position: absolute;
+    left: -9999px;
+}
+/* the label provides the same functionality 
+since the 'for' attribute in the html is equal to 'id' */
+
+.menu label {
+    position: absolute;
+    top: 40px;
+    right:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 999;
+    transform: scale(0);
+}
+
+.menu label div{
+    width: 30px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: white;
+}
+
+.menu input:checked ~ .nav-links {
+    opacity: 1;
+}
+
+.text-box{
+    width: 90%;
+    color: #fff;
+    position:absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+}
+
+.text-box h1{
+    font-size:  62px;
+}
+
+.text-box p{
+    margin: 10px 0 20px;
+    font-size: 16px;
+    color:#fff;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    border-radius: 0.25rem;
+    position: relative;
+    cursor: pointer; 
+    transition: 500ms ease;
+}
+
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+}
+
+/*------------Animating header on homepage-----------*/
+.animate {
+    animation: popIn 1s 1;
+    animation-delay: var(--i * 1s);
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+} 
+
+/*-----------Courses Page New Design--------*/
+.course{
+    text-align: center;
+    padding-top: 100px;
+    cursor: pointer;
+    border-radius: 9px;
+    margin: 0 100px;
+}
+h1 {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.tcourses{
+    margin-top: 40px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 25px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.c-offer p {
+    color: #333;
+}
+
+.tcourses .box{
+    width: 400px;
+    background-color: rgba(30,32,88,255);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.tcourses .box:hover{
+    transform: scale(1.05);
+}
+
+.tcourses .box-info {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tcourses .box-info button {
+    margin-top: 5px;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    border: none;
+    background-color: #29ABFF;
+}
+
+.tcourses .box-info button a {
+    color: #000;
+    text-decoration: none;
+}
+
+.tcourses img{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+p {
+    color: #f5f5f5;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 10px;
+}
+
+h2{
+    color:#fff
+}
+
+/* Alumini */
+
+.title {
+    margin: 0 180px;
+    font-size: 35px;
+}
+
+.Alumni{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 0.5rem;
+}
+
+.Alumni .container{
+    display: flex;
+    position: relative;
+}
+
+.Alumni .card{
+    width: 350px;
+    height: 500px;
+    margin: 50px;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    position: relative;
+}
+
+.Alumni .container .card img{
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    transition: .5s;
+    object-fit: cover;
+}
+
+.Alumni .container .card .intro{
+   height: 70px; 
+   width: 350px;
+   padding: 6px;
+   box-sizing: border-box;
+   position: absolute;
+   bottom: 80px;
+   background: rgb(27,27,27,.5);
+   color:white;
+   transition: .5s;
+}
+
+.Alumni .container .card h1{
+    margin: 10px;
+    font-size: 40px;
+}
+
+.Alumni .container .card p{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.Alumni .container .card .intro span{
+    font-weight: bold;
+}
+
+.Alumni .container .card:hover{
+    cursor: pointer;
+}
+
+.Alumni .container .card:hover .intro{
+    height: 220px;
+    bottom: 80px;
+    background: black;
+}
+
+.Alumni .container .card:hover p{
+   opacity: 1;
+   visibility: visible; 
+}
+.Alumni .container .card:hover img{
+    transform: scale(1.1) rotate(-3deg);
+}
+
+
+.pt-courses {
+    margin: 100px 50px;
+}
+
+.pt-courses .pt-info {
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.pt-courses .pt-info h2{
+    font-size: 35px;
+    color: #000;
+}
+
+.pt-courses .pt-info p {
+    color: #000;
+}
+
+.pt-courses .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    align-items: center;
+}
+
+.pt-courses .container .box {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.pt-courses .container .box .img-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s ease-in-out;
+}
+
+.pt-courses .container .box:hover .img-bg {
+    transform: translateY(-100%);
+}
+
+.pt-courses .container .box .img-bg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pt-courses .container .box .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 800ms ease-in-out;
+}
+
+.pt-courses .container .box .layer2 {
+    background-color: #90ff90;
+    transform: translateY(100%);
+}
+
+.pt-courses .container .box:hover .layer2 {
+    transform: translateY(-100%);
+}
+
+.pt-courses .container .box .content-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.pt-courses .container .box .content-bg div {
+    padding: 1rem 0.5rem;
+    height: 100%;
+    width: 100%;
+    background-color: #f5f5f5f5;
+    transform: translateY(200%);
+    transition: transform 1.5s ease-in-out;
+}
+
+.pt-courses .container .box .content-bg div h4 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pt-courses .container .box .content-bg div p {
+    margin-top: 5px;
+    color: #333;
+    text-align: start;
+}
+
+.pt-courses .container .box:hover .content-bg div {
+    transform: translateY(0);
+}
+
+
+
+
+/*-----------Course Page New End--------*/
+
+nav .fa{
+    display: none;
+}
+
+
+
+
+
+/* Styling Contact Us */
+.contact{
+    padding: 100px 0;
+    text-align: center;
+    margin: 100px auto;
+    width:  80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(photos/Students.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.contact h1{
+    color:#fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.contact button {
+    background: transparent;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 16px;
+    border: none;
+    background-color: #127fb9;
+    color: whitesmoke;
+    box-shadow: 0px 0px 2px 2px #127fb9;
+}
+
+.contact button a {
+    color: inherit;
+    text-decoration: none;
+}
+/*styling footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #127fb9;
+    padding: 2rem 6rem;
+}
+
+.Footer {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.Footer div h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.Footer div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Footer div ul {
+    list-style: none;
+}
+
+.Footer div ul li {
+    color: #e6e2e2;
+}
+
+
+/*styling about page*/
+/*----------About US Design---------*/
+.about{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(photos/Birdview.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.about-col img{
+    width: 100%;
+}
+.about-col h1{
+    padding-top: 0%;
+}
+.about-col p{
+    padding: 15px 0 25px;
+    color: #333;
+}
+
+.new{
+    border: 1px solid red; 
+    background: transparent;
+    color:red;
+}
+.new:hover{
+    color: white;
+}
+
+.course-page p {
+    color: #333;
+}
+
+/*------Styling EVENTS------*/
+.EVENTS{
+    width:100%;
+    height: 100vh;
+    background: url(photos/Birdview.jpg);
+    background-size: cover;
+
+}
+.leftside{
+    width: 50%;
+    height: 100%;
+    float:left;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.content{
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    transition: .5s;
+}
+.content:hover{
+    background: #e91e63;
+}
+.content h1{
+    margin:0;
+    padding: 0;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.content p{
+    margin: 10px 0 0;
+    padding: 0;
+}
+.outline{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    float: right;
+    box-sizing: border-box;
+}
+.outline ul{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    margin:0;
+    padding: 40px;
+    box-sizing: border-box;
+
+}
+.outline ul li{
+    list-style: none;
+    background:#fff;
+    box-sizing: border-box;
+    height: 200px;
+   
+}
+.time{
+    position: relative;
+    padding:20px;
+    background: #262626;
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+
+}
+.time:hover{
+    background: #e91e63;
+}
+.time h2{
+    position: absolute;
+    margin:0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 60px;
+    line-height: 50px;
+}
+
+.details{
+    padding:20px;
+    background: #fff;
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+.details h3{
+    position: relative;
+    margin:0;
+    padding: 0;
+    font-size: 22px;
+    
+}
+.details p{
+    position: relative;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.outline ul li .details p {
+    color: #333;
+}
+
+.outline ul li .details button {
+    background-color: transparent;
+    background: #29ABFF;
+    border: none;
+    color: #000;
+}
+
+.outline ul li .details button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 1200px) {
+    .course {
+        margin: 0 40px;
+    }
+
+    .tcourses {
+        flex-wrap: wrap;
+    }
+
+    .pt-courses .container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .pt-courses .container .box {
+        width: 380px;
+    }
+
+    .Alumni .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .Alumni .container .card {
+        margin: 0;
+    }
+
+    .title {
+        margin: 20px 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .pt-courses .container {
+        gap: 30px;
+    }
+
+    .pt-courses .container .box {
+        width: 280px;
+    }
+
+    .pt-courses .container .box .content-bg div {
+        padding: 1rem 0.25rem;
+    }
+
+    .tcourses .box{
+        width: 320px;
+    }
+
+    .Footer {
+        width: 100%;
+    }
+
+}
+
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 28px;
+    }
+
+    .menu label {
+        transform: scale(1);
+    }
+
+    .nav-links ul li{
+        display:block;
+        border-bottom: 1px solid #bcbbbba5;
+    }
+
+    .nav-links {
+        position:absolute;
+        background: #000;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: right;
+        z-index: 2;
+        transition: 300ms ease;
+        opacity: 0;
+    }
+
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 1px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 0 10px;
+        padding-top: 80px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .contact h1{
+        font-size: 24px;
+    }
+
+    .title {
+        margin-left: 20px;
+    }
+
+    .title h1 {
+        font-size: 32px;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+
+    .Footer {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .Footer div h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Footer { 
+        gap: 10px;
+    }
+
+    .Footer div ul {
+        gap: 10px;
+    }
+}
